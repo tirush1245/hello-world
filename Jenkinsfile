@@ -1,5 +1,5 @@
 
-currentBuild.displayName = "online-shopping-#"+currentBuild.number
+currentBuild.displayName = "Maven-Project-#"+currentBuild.number
 
 pipeline{
     agent any
