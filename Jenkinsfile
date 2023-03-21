@@ -22,21 +22,21 @@ pipeline{
 //                 sh "mv target/*.war target/myweb.war"
             }
         }
-//         stage("deploy-dev"){
-//             steps{
-//                 sshagent(['tomcat-new']) {
-//                 sh """
-//                     scp -o StrictHostKeyChecking=no target/myweb.war  ec2-user@1.0.0.99:/opt/tomcat8/webapps/
+        stage("deploy-dev"){
+            steps{
+                sshagent(['tomcat-new']) {
+                sh """
+                    scp -o StrictHostKeyChecking=no target/webapp.war  ec2-user@1.0.0.99:/opt/tomcat9/webapps/
                     
-//                     ssh ec2-user@1.0.0.99 /opt/tomcat8/bin/shutdown.sh
+                    ssh ec2-user@1.0.0.99 /opt/tomcat9/bin/shutdown.sh
                     
-//                     ssh ec2-user@1.0.0.99 /opt/tomcat8/bin/startup.sh
+                    ssh ec2-user@1.0.0.99 /opt/tomcat9/bin/startup.sh
                 
-//                 """
-//             }
+                """
+               }
             
-//             }
-//         }
+            }
+        }
   
     }
 }
