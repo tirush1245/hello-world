@@ -12,7 +12,7 @@ pipeline{
       
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/tirush1245/myweb.git'
+                git credentialsId: 'github', url: 'https://github.com/tirush1245/hello-world.git'
             }
         }
       
